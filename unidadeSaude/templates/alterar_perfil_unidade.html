@@ -1,0 +1,84 @@
+{% extends 'home.html' %}
+{% load bootstrap %}
+
+{% block title %} MinhaVez {% endblock %}
+
+{% block corpo %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div>
+                            <h4>Informações da Unidade de Saúde</h4>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        {{form_und.razao_social|bootstrap}}
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        {{form_und.cnpj|bootstrap}}
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        {{form_und.email|bootstrap}}
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        {{form_und.telefone|bootstrap}}
+                                    </div>
+                                </div>
+                            </div>
+                            <h4>Endereço</h4>
+                            <div class="row">
+                                <div class="col-lg-6 mt-4">
+                                    <div class="form-group">
+                                        {{form_und.rua|bootstrap}}
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        {{form_und.numero|bootstrap}}
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        {{form_und.bairro|bootstrap}}
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        {{form_und.complemento|bootstrap}}
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        {{form_und.cidade|bootstrap}}
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        {{form_und.estado|bootstrap}}
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <a href="{% url 'perfilUnidadeSaude' %}" class="btn btn-danger col-md-4">Cancelar</a>
+                                <button type="submit" class="btn btn-success col-md-6">Salvar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

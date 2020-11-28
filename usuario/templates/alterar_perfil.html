@@ -1,0 +1,111 @@
+{% extends 'base_usuario.html' %}
+{% load static %}
+{% load bootstrap %}
+
+{% block title %} MinhaVez {% endblock %}
+
+{% block corpo %}
+    <div class="container-fluid">
+        <div class="container h-100">
+            <div class="card login-form mb-0">
+                <div class="card-body pt-12">
+                    <form method="POST" id="step-form-horizontal" class="form-group">
+                        {% csrf_token %}
+                        <div>
+                            <h4>Detalhes da Conta</h4>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input type="text" name="username" value="{{context.usuario.user.username}}" class="form-control" placeholder="Username" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input type="email" name="email" value="{{context.usuario.user.email}}" class="form-control" placeholder="Email" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <a href="#" class="btn btn-primary">Alterar Senha</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <h4>Seus Dados</h4>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input type="text" name="firstname" value="{{context.usuario.user.first_name}}" class="form-control" placeholder="Nome" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input type="text" name="lastname" value="{{context.usuario.user.last_name}}" class="form-control" placeholder="Sobrenome" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        {{context.form.sexo|bootstrap}}
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 mt-4">
+                                    <div class="form-group">
+                                        <input type="text" name="rua" value="{{context.usuario.rua}}" class="form-control" placeholder="Rua" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input type="text" name="numero" value="{{context.usuario.numero}}" class="form-control" placeholder="Número" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input type="text" name="bairro" value="{{context.usuario.bairro}}" class="form-control" placeholder="Bairro" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input type="text" name="complemento" value="{{context.usuario.complemento}}" class="form-control" placeholder="Complemento" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input type="text" name="cidade" value="{{context.usuario.cidade}}" class="form-control" placeholder="Cidade" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input type="text" name="estado" value="{{context.usuario.estado}}" class="form-control" placeholder="Estado" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <h4>Informações</h4>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <input class="form-control" type="text" name="cpf" value="{{context.usuario.cpf}}" placeholder="CPF" required>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <input class="form-control" type="text" name="sus" value="{{context.usuario.sus}}" placeholder="SUS">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <input class="form-control" type="text" name="rg" value="{{context.usuario.rg}}" placeholder="RG">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <a href="{% url 'perfilUsuario' %}" class="btn btn-danger col-md-4">Cancelar</a>
+                                    <button type="submit" class="btn btn-success col-md-6">Salvar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

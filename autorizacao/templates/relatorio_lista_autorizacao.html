@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <title>MinhaVez</title>
+    </head> 
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="col text-center">
+                                <img class="img-fluid" src="{% static 'midias_minhavez/logo.png' %}" style="width: 350px; height: 100px;">
+                            </div>
+                            <div class="card-title mt-3">
+                                <h4>Lista de Autorizações</h4>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Nome</th>
+                                            <th>Responsavel</th>
+                                            <th>Hora</th>
+                                            <th>Data</th>
+                                            <th>Status</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for autorizacao in context.autorizacoes %}
+                                            <td>{{autorizacao.nome}}</td>
+                                            <td>{{autorizacao.responsavel}}</td>
+                                            <td>{{autorizacao.hora}}</td>
+                                            <td>{{autorizacao.data |date:"M, d, Y" }}</td>
+                                            {% if autorizacao.status == 'INICIADA' %}
+                                                <td class="alert alert-success">{{autorizacao.status}}</td>
+                                            {% elif autorizacao.status == 'AGUARDANDO' %}
+                                                <td class="alert alert-primary">{{autorizacao.status}}</td>
+                                            {% else %}
+                                                <td class="alert alert-danger">{{autorizacao.status}}</td>
+                                            {% endif %}
+                                            <td>Criado por {{autorizacao.user.username}}</td>
+                                    </tbody>
+                                        {% endfor %}
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

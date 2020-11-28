@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block title %} MinhaVez {% endblock %}
+
+{% block corpo %}
+
+<div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 col-xl-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="media align-items-center mb-4">
+                            <div class="media-body">
+                                <h3 class="mb-0">{{unidade.razao_social}}</h3>
+                                <p class="text-muted mb-0">{{user.username}}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-5">
+                            <div class="col-12 text-center">
+                                <a href="{% url 'alterarPerfilUnidade' unidade.id %}" class="btn btn-danger px-5">Editar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+            <div class="col-lg-8 col-xl-9">
+                <div>
+                    <div class="card">
+                        <div class="card-body">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>CNPJ</th>
+                                        <th>Telefone</th>
+                                        <th>Email</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <td>{{unidade.cnpj}}</td>
+                                    <td>{{unidade.telefone}}</td>
+                                    <td>{{unidade.email}}</td>
+                                </tbody>
+                            </table>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Rua</th>
+                                        <th>Número</th>
+                                        <th>Complemento</th>
+                                        <th>Bairro</th>
+                                        <th>Cidade</th>
+                                        <th>Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <td>{{unidade.rua}}</td>
+                                    <td>{{unidade.numero}}</td>
+                                    <td>{{unidade.complemento}}</td>
+                                    <td>{{unidade.bairro}}</td>
+                                    <td>{{unidade.cidade}}</td>
+                                    <td>{{unidade.estado}}</td>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+{% endblock %}

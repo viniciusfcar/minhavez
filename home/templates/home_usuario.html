@@ -1,0 +1,57 @@
+{% extends 'base_usuario.html' %}
+{% load bootstrap %}
+
+{% block title %} MinhaVez {% endblock %}
+
+{% block corpo %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-row text-center font-weight-bold" role="alert" text-align="center" style="background-color: #1E90FF; padding: 20px;">
+                        <a class="col-md-12" style="color: white; font-size: 20px;">SEJA BEM-VINDO!</a>           
+                    </div>
+                    {% if context.msg_error %}
+                        <div class="alert alert-danger" role="alert">
+                            <h4 class="alert-heading">{{ context.msg_error}}</h4>
+                            <hr>
+                            <p></p>
+                        </div>
+                    {% endif %}
+                    <div class="container-fluid mt-3">
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-6" style="margin-top: 0.7cm; align-items: center;">
+                                <div class="card gradient-4">
+                                    <div class="card-body">
+                                        <h3 class="card-title text-white" style="font-size: 25px;">MINHAS FICHAS</h3>
+                                        <div class="d-inline-block mt-3">
+                                            <a href="{% url 'minhasFichas' %}" class="btn btn-dark" style="font-size: medium;">
+                                                Acessar<i class="fas fa-play" style="font-size: 20px; margin-left: 15px;"></i>
+                                            </a>
+                                        </div>
+                                        <span class="float-right display-3 opacity-10"><i class="icon-tag" style="margin-left: 200px;"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6" style="margin-top: 0.7cm; align-items: center;">
+                                <div class="card gradient-5">
+                                    <div class="card-body">
+                                        <h3 class="card-title text-white" style="font-size: 25px;">MEUS AGENDAMENTOS</h3>
+                                        <div class="d-inline-block mt-3">
+                                            <a href="{% url 'meusAgendamentos' %}" class="btn btn-dark" style="font-size: medium;">
+                                                Acessar<i class="fas fa-play" style="font-size: 20px; margin-left: 15px;"></i>
+                                            </a>
+                                        </div>
+                                        <span class="float-right display-3 opacity-10"><i class="icon-notebook menu-icon" style="margin-left: 200px;"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
