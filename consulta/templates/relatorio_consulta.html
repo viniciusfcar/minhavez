@@ -1,9 +1,9 @@
 {% load static %}
+{% load bootstrap %}
 <!DOCTYPE html>
 <html>
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <!-- Optional theme -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
         <title>MinhaVez</title>
     </head>
@@ -16,8 +16,8 @@
                             <div class="col text-center">
                                 <img class="img-fluid" src="{% static 'midias_minhavez/logo.png' %}" style="width: 350px; height: 100px;">
                             </div>
-                            <div class="card-title">
-                                <h3>Detalhes da Consulta: {{ context.consulta.nome }}</h3>
+                            <div class="card-title mt-5">
+                                <h3 style="font-size: xx-large;">Detalhes da Consulta: {{ context.consulta.nome }}</h3>
                             </div>
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered zero-configuration">

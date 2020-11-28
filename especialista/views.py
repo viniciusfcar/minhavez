@@ -40,7 +40,7 @@ class GetEspecialistaViewSet(ModelViewSet):
     
     @action(methods=['get'], detail=False)
     def consultaEspecialista(self, request):
-        especialista = Especialista.objects.filter(num_conselho=request.GET.get('num_conselho'), conselho=request.GET.get('conselho'), estado_conselho=request.GET.get('estado_conselho'))
+        especialist = Especialista.objects.filter(num_conselho=request.GET.get('num_conselho'), conselho=request.GET.get('conselho'), estado_conselho=request.GET.get('estado_conselho'))
         
         if especialista:
             tmpJson = serializers.serialize("json", especialista)

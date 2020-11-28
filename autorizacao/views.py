@@ -203,7 +203,12 @@ def alterarAutorizacao(request, id):
             }
             return redirect('homeUnidadeSaude', {'context': context})
 
-        return render(request, 'cadastro_autorizacao.html', {'form': form})
+        context = {
+            'form': form,
+            'autorizacao': autorizacao,
+        }
+
+        return render(request, 'cadastro_autorizacao.html', {'context': context})
     else:
         context = {
             'msg_error': 'Impossivel Acessar Essa Área'

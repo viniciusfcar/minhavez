@@ -183,7 +183,12 @@ def alterarExame(request, id):
             }
             return redirect('homeUnidadeSaude', {'context': context})
 
-        return render(request, 'cadastro_exame.html', {'form': form})
+        context = {
+            'form': form,
+            'exame': exame,
+        }
+
+        return render(request, 'cadastro_exame.html', {'context': context})
     else:
         context = {
             'msg_error': 'Impossivel Acessar Essa Área'

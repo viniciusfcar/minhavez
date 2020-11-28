@@ -29,7 +29,7 @@
                             </div>
                             <div class="forma-group col-md-2" style="font-size: medium;">
                                 <label for="estadoConselho">Estado do Conselho</label>
-                                <select name="estadoConselho" class="form-control" id="estadoConselho" required>
+                                <select name="estado_conselho" class="form-control" id="estado_conselho" required>
                                     <option  value="{{ context.especialista.estado_conselho }}">{{ context.especialista.estado_conselho }}</option>
                                     <option value="AC">AC</option>
                                     <option value="AL">AL</option>
@@ -180,7 +180,7 @@
             conselho = $(this).val();
         });
 
-        $('#estadoConselho').on('change', function(){
+        $('#estado_conselho').on('change', function(){
             estado_conselho = $(this).val();
         });
 

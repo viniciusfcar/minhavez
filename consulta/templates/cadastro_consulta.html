@@ -14,7 +14,7 @@
                         {% csrf_token %}
                         <div class="forma-group card">
                             <label for="inputDate">Nome</label>
-                            <input type="text" class="form-control" id="inputDate" name="nome">
+                            <input type="text" class="form-control" id="inputDate" value="{{ context.consulta.nome }}" name="nome">
                         </div>
                         <div class="form-row">
                             <div class="forma-group col-md-3">
@@ -23,12 +23,12 @@
                             </div>
                             <div class="forma-group col-md-2">
                                 <label for="inputDate">Hora</label>
-                                <input type="text" class="form-control" minlength="4" maxlength="5" id="hora" name="hora">
+                                <input type="text" class="form-control" minlength="4" value="{{ context.consulta.hora }}" maxlength="5" id="hora" name="hora">
                             </div>
                         </div>
                         <div class="row">
                             <div class="forma-group col-md-5">
-                                {{ form.especialista|bootstrap }}
+                                {{ context.form.especialista|bootstrap }}
                             </div>
                         </div>
                         <div class="form-row">

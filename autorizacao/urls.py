@@ -23,6 +23,6 @@ urlpatterns = [
     path('encerrar_autorizacao/<int:id>/', encerrarAutorizacao, name='encerrarAutorizacao'),
     path('relatorio_autorizacao/', relatorioAutorizacao, name='relatorioAutorizacao'),
     path('detalhes_autorizacao_usuario/<int:id>/', detalhesAutorizacaoUsuario, name='detalhesAutorizacaoUsuario'),
-    path('relatorio_fila_autorizacao/', relatorioListaAutorizacao, name='relatorioListaAutorizacao'),
+    path('relatorio_lista_autorizacao/', relatorioListaAutorizacao, name='relatorioListaAutorizacao'),
     path('lista_autorizacoes_aguardando/', listaAutorizacoesAguardando, name='listaAutorizacoesAguardando'),
 ]

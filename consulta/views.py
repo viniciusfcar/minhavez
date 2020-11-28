@@ -209,8 +209,13 @@ def alterarConsulta(request, id):
 
             }
             return redirect('homeUnidadeSaude', {'context': context})
+        
+        context = {
+            'form': form,
+            'consulta': consulta,
+        }
 
-        return render(request, 'cadastro_consulta.html', {'form': form})
+        return render(request, 'cadastro_consulta.html', {'context': context})
     else:
         context = {
             'msg_error': 'Impossivel Acessar Essa Área'
