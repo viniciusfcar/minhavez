@@ -25,7 +25,7 @@ SECRET_KEY = 'othh=0ga!ih7fiq3wiuu87@+bk_+7$r@b_lbj=l=$j7r2_lq1='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['minhavezsistema.eba-hxfth9de.us-east-2.elasticbeanstalk.com']
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
